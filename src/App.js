@@ -5,14 +5,14 @@ import Nav from './components/Nav'
 import TextForm from './components/TextForm'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
-import About from './components/About'
+//import About from './components/About'
 import Alert from './components/Alert'
-import {
-  BrowserRouter, 
-  Routes,
-  Route,
+// import {
+//   BrowserRouter, 
+//   Routes,
+//   Route,
   
-} from "react-router-dom";
+// } from "react-router-dom";
 
 
 
@@ -34,9 +34,11 @@ export default function App() {
       setMode("dark")
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode has been enabled", 'success')
+      document.title="TextUtils " + "Dark Mode"; 
     } else {
       setMode("light")
       document.body.style.backgroundColor = "white";
+      document.title="TextUtils " + "Light Mode" 
     }
   }
   return (
@@ -57,20 +59,21 @@ export default function App() {
     
         </div>
         {/* <About/>    */}
-       <BrowserRouter>
+       {/* <BrowserRouter> */}
        <Nav title="Text-Utils" mode={mode} toggleMode={toggleMode} aboutText="About-TextUtils" />
        <Alert alert={alert} />
       
       <div className="container my-3">
-
-       <Routes>
+      <TextForm showAlert={showAlert} header="Enter the text to analyze" mode={mode} />
+    
+       {/* <Routes>
         <Route exact path="/" element={ <TextForm showAlert={showAlert} header="Enter the text to analyze" mode={mode} />
     }></Route>
     
         <Route exact path="about" element={ <About />}></Route>
-       </Routes>
+       </Routes> */}
        </div>
-       </BrowserRouter>
+       {/* </BrowserRouter> */}
      
     </>
     
