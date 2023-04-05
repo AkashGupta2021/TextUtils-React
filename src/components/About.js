@@ -1,35 +1,19 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-export default function About() {
-    const [myStyle, setmyStyle]= useState({
-    color: 'black',
-    backgroundColor: 'white'
+export default function About(props) {
+   
+  let myStyle= {
+    color: props.mode === 'dark' ? 'white' : '#042743',
+    backgroundColor: props.mode === 'dark' ? 'rgb(36, 74, 104)' : 'white',
+    
+  }
 
-  })
 
-  const [btnText, setBtnText] = useState("Enable Dark Mode");
-   const toggleStyle=()=>{
-    if(myStyle.color ==='black'){
-        setmyStyle({
-            color: 'white',
-            backgroundColor: 'black',
-            border: '1px solid white'
-        })
-        setBtnText("Enable light Mode")
-
-        }else{
-            setmyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })   
-            setBtnText("Enable Dark Mode")
-        }
-    }
      
     return (
     <>
-    <div className='container' style={myStyle}>
-    <h2 className='mb-3'>About Us</h2>
+    <div className='container' >
+    <h2 className='my-3' style={{color: props.mode === 'dark' ? 'white' : '#042743'}}>About Us</h2>
    <div className="accordion" id="accordionExample" style={myStyle}>
 
    <div className="accordion-item">
@@ -78,10 +62,7 @@ It is also useful for web page editors to optimise the content of a page by know
     </div>
   </div>
 </div>  
-<div className='container my-2'>
-<button type="button" onClick={toggleStyle} className='btn btn-primary mb-2'>{btnText}</button>
 
-</div>
 </div>
     </>
   )
