@@ -5,14 +5,14 @@ import Nav from './components/Nav'
 import TextForm from './components/TextForm'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
-import About from './components/About'
+// import About from './components/About'
 import Alert from './components/Alert'
-import {
-  BrowserRouter, 
-  Routes,
-  Route,
+// import {
+//   BrowserRouter, 
+//   Routes,
+//   Route,
   
-} from "react-router-dom";
+// } from "react-router-dom";
 
 
 
@@ -44,36 +44,22 @@ export default function App() {
   return (           
 
     <>
-
-
-
-      {/* <Nav title="Text-Utils" mode={mode} toggleMode={toggleMode} aboutText="About-TextUtils" />
-      <Alert alert={alert} />
-      
-      <div className="container my-3">
- 
-   
-      
- 
-    <TextForm showAlert={showAlert} header="Enter the text to analyze" mode={mode} />
-    
-        </div>
-        {/* <About/>    */}
-       <BrowserRouter>
+     
        <Nav title="Text-Utils" mode={mode} toggleMode={toggleMode}  />
        <Alert alert={alert} />
       
       <div className="container my-3">
-      {/* <TextForm showAlert={showAlert} header="Enter the text to analyze" mode={mode} />
-     */}
-       <Routes>
-        <Route exact path="/" element={ <TextForm showAlert={showAlert} header="Enter the text to analyze" mode={mode} />
-    }></Route>
+      
+       {/* <Routes> */}
+       <TextForm showAlert={showAlert} header="Enter the text to analyze" 
+       mode={mode} />
+      
+    {/* </Route> */}
     
-        <Route exact path="about" element={ <About mode={mode} aboutText="about here"/>} ></Route>
-       </Routes>
+        {/* <Route exact path="about" element={ <About mode={mode} aboutText="about here"/>} ></Route>
+       </Routes> */}
        </div>
-       </BrowserRouter>
+       {/* </BrowserRouter> */}
      
     </>
     
